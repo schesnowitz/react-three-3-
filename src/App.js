@@ -1,8 +1,12 @@
 import { useState } from "react";
 import BookCreate from "./components/BookCreate";
+import BookList from "./components/BookList";
+
 
 function App() {
   const [books, setBooks] = useState([]);
+
+
 
   const createBook = (title) => {
     // console.log('book title -> ',title);
@@ -14,8 +18,8 @@ function App() {
   };
 
   return (
-    <div>
-      {books.length}
+    <div className="app">
+      <BookList books={books} />
       <BookCreate onSubmitForm={createBook} />
     </div>
   );
